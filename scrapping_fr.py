@@ -47,7 +47,7 @@ class ScrapingCNOM:
         regions = driver.find_element_by_id('region').get_attribute('innerHTML')
         soup = BeautifulSoup(regions, 'lxml')
         regions = soup.find_all('option')
-        for reg in regions[1:4]:
+        for reg in regions[1:]:
             driver.get(self.url)
             driver.find_element_by_xpath('//option[contains(text(), "OPHTALMOLOGI")]').click()
             driver.execute_script("document.getElementById('edit-statut-1').setAttribute('checked','checked')")
